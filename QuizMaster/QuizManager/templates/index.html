@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
-    <title>QuizApp</title>
-    <p>This is the default landing page.</p>
-</head>
+    <title>QuizMaster</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+    </head>
 <body>
-
+     <header>
+         <button class="btn_login">Login</button>
+         <button class="btn_login">Register</button>
+     </header>
+     <main>
+        <p>Test your knowledge with our exciting quizzes!</p>
+     </main>
+   <footer class="footer_cs">
+        <!-- Your footer content goes here -->
+        <p>&copy; 2023 QuizMaster. All rights reserved.</p>
+    </footer>
 </body>
 </html>
