@@ -1,0 +1,31 @@
+main {
+    text-align: center;
+    margin: 2em;
+    font-weight: bold;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    background-image: url('/static/images/quiz.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+header {
+    background-color: #6ab8cc;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.btn_login{
+    background-color: lightblue;
+    font-size: medium;
+    border-color: lightblue;
+}
+
+.footer_cs {
+    padding-top: 35%;
+    text-align: center;
+}
