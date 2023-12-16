@@ -1,31 +1,140 @@
-main {
-    text-align: center;
-    margin: 2em;
-    font-weight: bold;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Poppins" , sans-serif;
 }
+
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    background-image: url('/static/images/quiz.jpg');
-    background-repeat:no-repeat;
-    background-size:cover;
+   min-height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: #7d2ae8;
+   padding: 30px;
 }
-header {
-    background-color: #6ab8cc;
+
+.container {
+    max-width: 850px;
+    width: 100%;
+    background-color: #fff;
+    padding: 40px 30px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2)
+
+}
+
+.container .form {
+    height: 100%;
+    width: 100%;
+    background: #fff;
+}
+
+.container .form-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.form-content .login-form,
+.form-content .signup-form {
+    width: calc(100% / 2 - 25px);
+    //background: red;
+}
+
+form .form-content .title {
+    position: relative;
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+}
+form .form-content .title:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 25px;
+    background: #7d2ae8;
+}
+
+form .signup-form  .title:before{
+    width: 20px;
+}
+
+form .form-content .input-boxes {
+    margin-top: 30px;
+}
+
+form .form-content .input-box {
+    display: flex;
+    align-items: center;
+    height: 50px:
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+}
+
+.form-content .input-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.form-content .input-box  input:focus,
+.form-content .input-box  input:valid {
+ border-color: #7d2ae8;
+}
+
+.form-content .input-box i {
+    position: absolute;
+    color: #7d2ae8;
+    font-size: 17px;
+}
+
+form .form-content .text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+form .form-content .text a{
+    text-decoration: none;
+}
+
+form .form-content .text a:hover{
+    text-decoration: underline;
+}
+
+form .form-content .button {
     color: #fff;
-    text-align: center;
-    padding: 1em 0;
+    margin-top: 40px;
 }
 
-.btn_login{
-    background-color: lightblue;
-    font-size: medium;
-    border-color: lightblue;
+form .form-content .button input {
+    color: #fff;
+    background: #7d2ae8;
+    border-radius: 6px;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.4s ease;
 }
 
-.footer_cs {
-    padding-top: 35%;
-    text-align: center;
+form .form-content .button input:hover {
+    background: #5b13b9;
+}
+
+form .form-content label {
+    color: #5b13b9;
+}
+
+form .form-content label:hover {
+    text-decoration: underline;
 }
