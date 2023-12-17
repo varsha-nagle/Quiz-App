@@ -16,11 +16,75 @@ body {
 }
 
 .container {
+    position: relative;
     max-width: 850px;
     width: 100%;
     background-color: #fff;
     padding: 40px 30px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2)
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    persective: 2700px;
+}
+
+.container .cover {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 50%;
+    z-index: 98;
+    transition: all 1s ease;
+    transform-origin: left;
+    transform-style: preserve-3d;
+
+}
+
+.container .cover::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #7d2ae8;
+    opacity: 0.5;
+    z-index: 100;
+}
+
+.container #flip:checked ~ .cover{
+    transform: rotateY(-180deg);
+}
+
+.container .cover img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 12;
+    backface-visibility: hidden;
+}
+
+
+.container .cover .text{
+    position: absolute;
+    z-index: 111;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover .text .text-1,
+.cover .text .text-2 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    backface-visibility: hidden;
+}
+
+.cover .text .text-2 {
+    font-size: 15px;
+    font-weight: 500;
 
 }
 
@@ -70,7 +134,7 @@ form .form-content .input-boxes {
 form .form-content .input-box {
     display: flex;
     align-items: center;
-    height: 50px:
+    height: 50px;
     width: 100%;
     margin: 10px 0;
     position: relative;
@@ -133,8 +197,15 @@ form .form-content .button input:hover {
 
 form .form-content label {
     color: #5b13b9;
+    cursor: pointer;
 }
 
 form .form-content label:hover {
     text-decoration: underline;
+}
+
+form .form-content .login-text,
+form .form-content .sign-up-text {
+    text-align: center;
+    margin-top: 25px;
 }
