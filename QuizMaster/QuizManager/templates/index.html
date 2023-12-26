@@ -9,74 +9,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 <body>
-<div class="container">
-    <input type="checkbox" id="flip">
-    <div class="cover">
-        <div class="front">
-            <img src="static/images/frontimg.jpg" alt="image">
-            <div class="text">
-                <span class="text-1">"Elevate your mind,<br>one question at a time."</span>
-                <span class="text-2">Welcome to the Quiz Journey!</span>
+    <div class="container">
+        <div class="btn">
+            <div>
+                <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                     <button class="login_btn">Login</button>
+                </form>
             </div>
+
+            <div>
+                <form>
+                     <button class="register_btn">Register</button>
+                </form>
+            </div>
+
+<!--             <button class="register_btn">Register</button>-->
         </div>
-<!--        <div class="back">-->
-<!--&lt;!&ndash;            <img class="backImg" src="static/images/quiz.jpg" alt="image">&ndash;&gt;-->
-<!--            <div class="text">-->
-<!--                <span class="text-1">"Complete miles of journey <br> with one step"</span>-->
-<!--                <span class="text-2">Let's get started!</span>-->
-<!--            </div>-->
-<!--        </div>-->
+        <div class="content">
+            Test your knowledge with our exciting quizzes!
+        </div>
     </div>
-    <form action="#">
-        <div class="form-content">
-          <div class="login-form">
-            <div class="title">Login</div>
-              <div class="input-boxes">
-                 <div class="input-box">
-                  <i class="fas fa-envelope"></i>
-                  <input type="text" placeholder="Enter your email" required>
-                 </div>
-                <div class="input-box">
-                  <i class="fas fa-lock"></i>
-                  <input type="password" placeholder="Enter your password" required>
-                </div>
-                <div class="text"><a href="#">Forget password?</a></div>
-                <div class="button input-box">
-                  <input type="submit" value="Submit">
-                </div>
-               <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
-             </div>
-           </div>
-
-           <div class="signup-form">
-             <div class="title">Signup</div>
-                <div class="input-boxes">
-                   <div class="input-box">
-                      <i class="fas fa-user"></i>
-                      <input type="text" placeholder="Enter your username" required>
-                   </div>
-                   <div class="input-box">
-                        <i class="fas fa-envelope"></i>
-                        <input type="text" placeholder="Enter your email" required>
-                   </div>
-                  <div class="input-box">
-                        <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Enter your password" required>
-                  </div>
-                  <div class="button input-box">
-                      <input type="submit" value="Submit">
-                  </div>
-                  <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
-             </div>
-           </div>
-        </div>
-    </form>
-</div>
-
-
-
-<!--     <main>-->
-<!--        <p>Test your knowledge with our exciting quizzes!</p>-->
-<!--     </main>-->
 </body>
 </html>
