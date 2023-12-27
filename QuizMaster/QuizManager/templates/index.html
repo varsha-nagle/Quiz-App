@@ -13,18 +13,18 @@
         <div class="btn">
             <div>
                 <form method="post" action="{% url 'login' %}">
-                    {% csrf_token %}
+                     {% csrf_token %}
                      <button class="login_btn">Login</button>
                 </form>
             </div>
 
             <div>
-                <form>
+                <form  method="post" action="{% url 'register' %}">
+                     {% csrf_token %}
                      <button class="register_btn">Register</button>
                 </form>
             </div>
 
-<!--             <button class="register_btn">Register</button>-->
         </div>
         <div class="content">
             Test your knowledge with our exciting quizzes!
