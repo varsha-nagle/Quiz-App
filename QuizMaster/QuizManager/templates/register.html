@@ -9,27 +9,35 @@
 </head>
 <body>
 <div class="container">
-    <form action="#">
+    <form method="POST" action="">
+        {% csrf_token %}
         <div class="form-content">
             <div class="signup-form">
                 <div class="title">Signup</div>
                 <div class="input-boxes">
                     <div class="input-box">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Enter your username" required>
+                        {{ form.username }}
+<!--                        <input type="text" placeholder="Enter your username" required>-->
                     </div>
                     <div class="input-box">
                         <i class="fas fa-envelope"></i>
-                        <input type="text" placeholder="Enter your email" required>
+                        {{ form.email }}
+<!--                        <input type="text" placeholder="Enter your email" required>-->
                     </div>
                     <div class="input-box">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Enter your password" required>
+                        {{ form.password1 }}
+<!--                        <input type="password" placeholder="Enter your password" required>-->
                     </div>
                    <div class="input-box">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Re-Enter password" required>
+                        {{ form.password2 }}
+<!--                        <input type="password" placeholder="Re-Enter password" required>-->
                     </div>
+
+                     {{form.errors }}
+
                     <div class="button input-box">
                         <input type="submit" value="Submit">
                     </div>

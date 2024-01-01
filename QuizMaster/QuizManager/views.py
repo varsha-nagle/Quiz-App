@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
+from .forms import CreateUserForm
 
 
 # Create your views here.
@@ -22,4 +23,18 @@ def login_view(request):
 
 
 def register_view(request):
-    return render(request, 'register.html')
+    if request.method == 'POST':
+        form = CreateUserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Create a new instance of the form to clear input fields
+            form = CreateUserForm()
+            print('Data is saved')
+            # Redirect to the desired page after registration
+            return redirect('login')  # Replace 'login' with the name of your login URL pattern
+        else:
+            print(form.errors, 'Error block')
+    else:
+        form = CreateUserForm()
+
+    return render(request, 'register.html', {'form': form})
