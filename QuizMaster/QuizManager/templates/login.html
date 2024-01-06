@@ -10,18 +10,26 @@
 <body>
 
 <div class="container">
-    <form action="#">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
         <div class="form-content">
             <div class="login-form">
                 <div class="title">Login</div>
                 <div class="input-boxes">
                     <div class="input-box">
                         <i class="fas fa-envelope"></i>
-                        <input type="text" placeholder="Enter your email" required>
+                        <input type="text" name="username"  placeholder="Enter your username" required>
                     </div>
                     <div class="input-box">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Enter your password" required>
+                        <input type="password" name="password" placeholder="Enter your password" required>
                     </div>
                     <div class="text"><a href="#">Forget password?</a></div>
                     <div class="button input-box">
