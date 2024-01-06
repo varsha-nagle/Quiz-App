@@ -12,14 +12,14 @@
 <div class="container">
     <form method="POST" action="">
         {% csrf_token %}
-        {% if messages %}
+        <div class="form-content">
+          {% if messages %}
             <ul class="messages">
                 {% for message in messages %}
-                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %} >{{ message }}</li>
                 {% endfor %}
             </ul>
-        {% endif %}
-        <div class="form-content">
+          {% endif %}
             <div class="login-form">
                 <div class="title">Login</div>
                 <div class="input-boxes">
