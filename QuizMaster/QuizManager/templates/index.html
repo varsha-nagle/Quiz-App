@@ -17,14 +17,12 @@
                      <button class="login_btn">Login</button>
                 </form>
             </div>
-
             <div>
                 <form  method="post" action="{% url 'register' %}">
                      {% csrf_token %}
                      <button class="register_btn">Register</button>
                 </form>
             </div>
-
         </div>
         <div class="content">
             Test your knowledge with our exciting quizzes!

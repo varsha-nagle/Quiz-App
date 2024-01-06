@@ -18,8 +18,9 @@ body {
 }
 
 .btn {
-    text-align: center;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .login_btn,
