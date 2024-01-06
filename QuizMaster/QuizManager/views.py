@@ -21,7 +21,8 @@ def login_view(request):
             return redirect('/home')  # Check that 'home' matches your actual URL pattern
         else:
             # Handle invalid login
-            messages.error(request, 'Invalid email or password.')
+            if username and password:
+                messages.error(request, 'Invalid username or password.')
     return render(request, 'login.html')
 
 
