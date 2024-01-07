@@ -29,7 +29,8 @@
                     </div>
                     <div class="input-box">
                         <i class="fas fa-lock"></i>
-                        <input type="password" name="password" placeholder="Enter your password" required>
+                        <input type="password" name="password" id="password-input" placeholder="Enter your password" required>
+                        <span class="toggle-password" onclick="togglePasswordVisibility()"><i class="fas fa-eye"></i></span>
                     </div>
                     <div class="text"><a href="#">Forget password?</a></div>
                     <div class="button input-box">
@@ -41,6 +42,25 @@
         </div>
     </form>
 </div>
+
+<!--password show and hide functionality-->
+<script>
+function togglePasswordVisibility() {
+    var passwordInput = document.getElementById("password-input");
+
+    var toggleButton = document.querySelector(".toggle-password");
+
+    if (passwordInput && passwordInput.type) {
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            toggleButton.innerHTML = '<i class="fas fa-eye-slash"></i>';
+        } else {
+            passwordInput.type = "password";
+            toggleButton.innerHTML = '<i class="fas fa-eye"></i>';
+        }
+    }
+}
+</script>
 
 </body>
 </html>
