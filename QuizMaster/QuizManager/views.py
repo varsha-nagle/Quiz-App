@@ -40,6 +40,8 @@ def register_view(request):
             print(form.errors, 'Error block')
     else:
         form = CreateUserForm()
+        form.fields['username'].widget.attrs['placeholder'] = 'Enter your username'
+        form.fields['email'].widget.attrs['placeholder'] = 'Enter your email'
 
     return render(request, 'register.html', {'form': form})
 
