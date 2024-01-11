@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #7d2ae8;
+}
+
+header {
+    background-color: #4d09a3;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+.quiz-categories {
+    display: flex;
+}
+
+.category-button {
+    background-color: #5b13b9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.category-button:hover {
+    background-color: #45a049;
+}
