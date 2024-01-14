@@ -40,3 +40,43 @@ header {
 .category-button:hover {
     background-color: #45a049;
 }
+
+.main_content{
+    font-size: xxx-large;
+   /* padding-top: 15px; */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    font-size: x-large;
+    color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    padding-top: 51px;
+}
+
+.main_content_txt{
+    font-size: x-large;
+    padding-bottom: 10px;
+    color: antiquewhite;
+    display: flex;
+    justify-content: center;
+}
+
+.image-container {
+    text-align: center;
+    margin-top: 10px;
+    text-align: center;
+    margin-top: 20px;
+    width: 10%;
+    padding-left: 40%;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
