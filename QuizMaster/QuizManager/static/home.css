@@ -80,3 +80,36 @@ header {
     height: auto;
 }
 
+.category-button_logout {
+    margin-left: 10px;
+}
+
+.category-button_logout a {
+    display: block;
+}
+
+.category-button_logout img {
+    width: 32px;
+    height: 36px;
+}
+
+/*logout hover message */
+.category-button_logout {
+    position: relative;
+}
+
+.category-button_logout:hover::before {
+    content: attr(title);
+    position: absolute;
+    background-color: #262184;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    white-space: nowrap;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
