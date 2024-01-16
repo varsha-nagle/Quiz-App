@@ -19,8 +19,15 @@
                 <button class="category-button">SQL</button>
                 <button class="category-button">Git</button>
                 <button class="category-button">Networking</button>
-                <!-- Add more buttons as needed -->
+
             </div>
+               <!-- Logout Button with Image -->
+            <div class="category-button_logout" id="logoutButton" title="Are you sure you want to logout?">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'images/icons-logout.png' %}" alt="Sign Out">
+                </a>
+            </div>
+
         </div>
     </header>
       <div>
@@ -30,7 +37,7 @@
             <pre class="main_content_txt"><em><strong>Complete miles of journey with one step. Let's get started!</strong></em></pre>
 
             <div class="image-container">
-                <img src="{% static 'images/question-mark.png' %}" alt="Your Image Alt Text">
+                <img src="{% static 'images/question-mark.png' %}" alt="question-mark image">
             </div>
 
             <div class="content">
@@ -38,5 +45,29 @@
             </div>
       </div>
   </span>
+
+    <!-- Script for tooltip display -->
+<!--    <script>-->
+<!--        const logoutButton = document.getElementById('logoutButton');-->
+<!--        const logoutTooltip = document.getElementById('logoutTooltip');-->
+
+<!--        logoutButton.addEventListener('mouseover', function () {-->
+<!--            // Display tooltip on hover-->
+<!--            logoutTooltip.style.visibility = 'visible';-->
+<!--        });-->
+
+<!--        logoutButton.addEventListener('mouseout', function () {-->
+<!--            // Hide tooltip when not hovered-->
+<!--            logoutTooltip.style.visibility = 'hidden';-->
+<!--        });-->
+
+<!--        // Optionally, you can add a click event to handle the logout action-->
+<!--        logoutButton.addEventListener('click', function () {-->
+<!--            if (window.confirm("Are you sure you want to logout?")) {-->
+<!--                // Perform logout action if confirmed-->
+<!--                window.location.href = logoutButton.querySelector('a').href;-->
+<!--            }-->
+<!--        });-->
+<!--    </script>-->
 </body>
 </html>
