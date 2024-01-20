@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    {% load static %}
+    <meta charset = "UTF-8">
+    <title>QuizMaster</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'rules.css' %}">
+</head>
+<body>
+     <header>
+        <div class="header-container">
+               <!-- Logout Button with Image -->
+            <div class="category-button_logout" id="logoutButton" title="Are you sure you want to logout?">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'images/icons-logout.png' %}" alt="Sign Out">
+                </a>
+            </div>
+        </div>
+    </header>
+    <div>
+       <div class="content">
+           <span>Here are the rules before you commence the exam.</span>
+       </div>
+       <div class="mid_content">
+              Test Instructions and Rules :
+           <p>1. All questions are multiple-choice questions.</p>
+           <p>2. Answer each question as quickly as possible.</p>
+           <p>3. Questions are displayed randomly for every user.</p>
+           <p>4. You will be notified of your marks immediately upon submitting each answer.</p>
+           <p>5. Make sure to read and understand each question carefully before selecting your answer.</p>
+       </div>
+        <p style="text-align: center; font-size:20px; font-weight:bold; color:antiquewhite">Best of Luck....!!</p>
+         <div class="button-container">
+             <button class="start_btn">Let's Start</button>
+         </div>
+    </div>
+</body>
+</html>
