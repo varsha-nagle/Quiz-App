@@ -93,3 +93,10 @@ header {
     display: flex;
     justify-content: center;
 }
+
+.msg {
+    text-align: center;
+    color: #ebdfdf;
+    font-size: 20px;
+    font-family: monospace;
+}
