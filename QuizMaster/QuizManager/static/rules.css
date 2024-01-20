@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #7d2ae8;
+ }
+
+header {
+    background-color: #4d09a3;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category-button_logout {
+    margin-left: 100%;
+}
+
+.category-button_logout a {
+    display: block;
+}
+
+.category-button_logout img {
+    width: 32px;
+    height: 36px;
+}
+
+/*logout hover message */
+.category-button_logout {
+    position: relative;
+}
+
+.category-button_logout:hover::before {
+    content: attr(title);
+    position: absolute;
+    background-color: #262184;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    white-space: nowrap;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.content {
+    margin-top: 20px;
+    text-align: center;
+    font-family: cursive;
+    font-size: 30px;
+    color: #ebdfdf;
+}
+
+.mid_content {
+    margin-top: 25px;
+    color: antiquewhite;
+    font-family: cursive;
+    font-size: 20px;
+    margin-left: 36%;
+}
+
+.start_btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid #007BFF; /* Border color */
+    color: white; /* Text color */
+    background-color: #5b13b9; /* Background color */
+    cursor: pointer;
+    border: none;
+    border-radius: 5px; /* Add rounded corners */
+    box-sizing: border-box; /* Ensure padding and border don't add to the width */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+.start_btn:hover {
+    background-color: #45a049;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}

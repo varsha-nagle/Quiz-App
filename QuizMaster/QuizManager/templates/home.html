@@ -3,7 +3,7 @@
 <head>
      {% load static %}
     <meta charset = "UTF-8">
-    <title>Home</title>
+    <title>QuizMaster</title>
     <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
      <header>
         <div class="header-container">
             <div class="quiz-categories">
-                <button class="category-button">General Knowledge</button>
+                <button class="category-button" onclick="window.location.href='{% url 'rules' %}'">General Knowledge</button>
                 <button class="category-button" >Python</button>
                 <button class="category-button">Django</button>
                 <button class="category-button">SQL</button>

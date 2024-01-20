@@ -48,3 +48,7 @@ def register_view(request):
 
 def home_view(request):
     return render(request, 'home.html')
+
+
+def rules_view(request):
+    return render(request, 'rules.html')
