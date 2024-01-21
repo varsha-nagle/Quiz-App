@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Quiz Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'quest.css' %}">
+</head>
+<body>
+     <header>
+        <div class="header-container">
+               <!-- Logout Button with Image -->
+            <div class="category-button_logout" id="logoutButton" title="Are you sure you want to logout?">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'images/icons-logout.png' %}" alt="Sign Out">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    {% for question in questions %}
+    <div>
+        <p>{{ question.question_text }}</p>
+        <form>
+            <input type="radio" name="question{{ question.id }}" value="{{ question.option1 }}"> {{ question.option1 }}<br>
+            <input type="radio" name="question{{ question.id }}" value="{{ question.option2 }}"> {{ question.option2 }}<br>
+            <input type="radio" name="question{{ question.id }}" value="{{ question.option3 }}"> {{ question.option3 }}<br>
+            <input type="radio" name="question{{ question.id }}" value="{{ question.option4 }}"> {{ question.option4 }}<br>
+        </form>
+    </div>
+    {% endfor %}
+<!--    <div>-->
+<!--        <p>{{ current_question.question_text }}</p>-->
+<!--        <form method="post">-->
+<!--            {% csrf_token %}-->
+<!--            <input type="radio" name="selected_option" value="{{ current_question.option1 }}"> {{ current_question.option1 }}<br>-->
+<!--            <input type="radio" name="selected_option" value="{{ current_question.option2 }}"> {{ current_question.option2 }}<br>-->
+<!--            <input type="radio" name="selected_option" value="{{ current_question.option3 }}"> {{ current_question.option3 }}<br>-->
+<!--            <input type="radio" name="selected_option" value="{{ current_question.option4 }}"> {{ current_question.option4 }}<br>-->
+<!--            <button type="submit">Next</button>-->
+<!--        </form>-->
+<!--    </div>-->
+
+<!--<div>-->
+<!--        <p>{{ current_question.question_text }}</p>-->
+<!--        <form method="post">-->
+<!--            {% csrf_token %}-->
+<!--            <input type="radio" name="selected_option" value="{{ current_question.option1 }}"> {{ current_question.option1 }}<br>-->
+<!--            <input type="radio" name="selected_option" value="{{ current_question.option2 }}"> {{ current_question.option2 }}<br>-->
+<!--            <input type="radio" name="selected_option" value="{{ current_question.option3 }}"> {{ current_question.option3 }}<br>-->
+<!--            <input type="radio" name="selected_option" value="{{ current_question.option4 }}"> {{ current_question.option4 }}<br>-->
+<!--                <button type="submit">Next</button>-->
+<!--        </form>-->
+<!--    </div>-->
+
+</body>
+</html>
