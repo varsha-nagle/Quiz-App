@@ -2,11 +2,13 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from .forms import CreateUserForm
+from .models import Question
 
 
 # Create your views here.
 def index(request):
     return render(request, 'index.html')
+
 
 def login_view(request):
     if request.method == 'POST':
@@ -54,5 +56,8 @@ def rules_view(request):
     return render(request, 'rules.html')
 
 
-def quest_view(request):
-    return render(request, 'quest.html')
+def quiz_page(request):
+    questions = Question.objects.all()
+    return render(request, 'quiz_page.html', {'questions': questions})
+
+
