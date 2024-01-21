@@ -52,3 +52,7 @@ def home_view(request):
 
 def rules_view(request):
     return render(request, 'rules.html')
+
+
+def quest_view(request):
+    return render(request, 'quest.html')
