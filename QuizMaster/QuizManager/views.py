@@ -112,7 +112,9 @@ def quiz_page(request):
         request.session['current_question_index'] = current_question_index
         return redirect('quiz_page')
 
-    return render(request, 'quiz_page.html', {'current_question': current_question, 'total_questions': len(questions), 'current_question_index': current_question_index, 'last_question_index': last_question_index})
+    return render(request, 'quiz_page.html', {'current_question': current_question, 'total_questions': len(questions),
+                                              'current_question_index': current_question_index,
+                                              'last_question_index': last_question_index})
 
 
 

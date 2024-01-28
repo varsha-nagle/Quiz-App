@@ -21,6 +21,10 @@
      <div class="quiz-container">
          <form method="post" action="{% url 'quiz_page' %}">
           {% csrf_token %}
+             <div class="timer-container">
+                <span id="timer">Timer: 00:00</span>
+             </div>
+
               <div class="options">
                     <p>{{ current_question.question_text }}</p>
                     <input type="radio" name="question{{ current_question.id }}" value="{{ current_question.option1 }}"> {{ current_question.option1 }}<br>
@@ -40,5 +44,50 @@
             {% endif %}
         </form>
     </div>
+
+<!-- Place this script after your existing HTML content -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Set the total time for each question (in seconds)
+        var totalTimePerQuestion = 60; // Adjust this value as needed
+
+        // Get the timer element
+        var timerElement = document.getElementById('timer');
+
+        // Function to update the timer display
+        function updateTimerDisplay(seconds) {
+            var minutes = Math.floor(seconds / 60);
+            var remainingSeconds = seconds % 60;
+            timerElement.textContent = 'Timer: ' + (minutes < 10 ? '0' : '') + minutes + ':' + (remainingSeconds < 10 ? '0' : '') + remainingSeconds;
+        }
+
+        // Function to handle the timer countdown
+        function startTimer() {
+            var secondsRemaining = totalTimePerQuestion;
+
+            // Initial display
+            updateTimerDisplay(secondsRemaining);
+
+            // Update the timer every second
+            var timerInterval = setInterval(function() {
+                secondsRemaining--;
+
+                if (secondsRemaining < 0) {
+                    // Time is up, handle logic for time expiration (e.g., move to the next question)
+                    clearInterval(timerInterval);
+                    // Add your logic here for when time is up
+                } else {
+                    // Update the timer display
+                    updateTimerDisplay(secondsRemaining);
+                }
+            }, 1000);
+        }
+
+        // Call the startTimer function to initiate the timer
+        startTimer();
+    });
+</script>
+
+
 </body>
 </html>
