@@ -56,8 +56,63 @@ def rules_view(request):
     return render(request, 'rules.html')
 
 
+# def quiz_page(request):
+#     # Get the current question ID from the session or default to the first question
+#     current_question_id = request.session.get('current_question_id', None)
+#     if current_question_id is None:
+#         questions = Question.objects.all()
+#         if questions:
+#             current_question_id = questions.first().id
+#             request.session['current_question_id'] = current_question_id
+#
+#     # Get the current question based on the current_question_id
+#     current_question = Question.objects.get(id=current_question_id)
+#
+#     # Handle form submission if any
+#     if request.method == 'POST':
+#         # Process the submitted answer and update the session
+#         submitted_answer = request.POST.get(f'question{current_question_id}', None)
+#         # Add your answer processing logic here
+#
+#         # Move to the next question or finish the quiz based on your logic
+#         # For example, move to the next question:
+#         next_question = Question.objects.filter(id__gt=current_question_id).first()
+#         if next_question:
+#             request.session['current_question_id'] = next_question.id
+#             return redirect('quiz_page')
+#         else:
+#             # Redirect to a quiz completion page or wherever you want to go after the last question
+#             return redirect('quiz_complete')
+#
+#     return render(request, 'quiz_page.html', {'current_question': current_question})
+
+
 def quiz_page(request):
+    current_question_index = request.session.get('current_question_index', 0)
     questions = Question.objects.all()
-    return render(request, 'quiz_page.html', {'questions': questions})
+
+    if current_question_index >= len(questions):
+        # Redirect to a quiz completion page or wherever you want to go after the last question
+        return redirect('quiz_complete')
+
+    current_question = questions[current_question_index]
+    last_question_index = len(questions) - 1
+
+    if request.method == 'POST':
+        # Process the submitted answer and update the session
+        submitted_answer = request.POST.get(f'question{current_question.id}', None)
+        # Add your answer processing logic here
+
+        # Determine whether it's "Next" or "Previous" based on the button clicked
+        if 'next' in request.POST:
+            current_question_index += 1
+        elif 'previous' in request.POST:
+            current_question_index -= 1
+
+        request.session['current_question_index'] = current_question_index
+        return redirect('quiz_page')
+
+    return render(request, 'quiz_page.html', {'current_question': current_question, 'total_questions': len(questions), 'current_question_index': current_question_index, 'last_question_index': last_question_index})
+
 
 

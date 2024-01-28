@@ -18,40 +18,27 @@
         </div>
     </header>
 
-    {% for question in questions %}
-    <div>
-        <p>{{ question.question_text }}</p>
-        <form>
-            <input type="radio" name="question{{ question.id }}" value="{{ question.option1 }}"> {{ question.option1 }}<br>
-            <input type="radio" name="question{{ question.id }}" value="{{ question.option2 }}"> {{ question.option2 }}<br>
-            <input type="radio" name="question{{ question.id }}" value="{{ question.option3 }}"> {{ question.option3 }}<br>
-            <input type="radio" name="question{{ question.id }}" value="{{ question.option4 }}"> {{ question.option4 }}<br>
+     <div class="quiz-container">
+         <form method="post" action="{% url 'quiz_page' %}">
+          {% csrf_token %}
+              <div class="options">
+                    <p>{{ current_question.question_text }}</p>
+                    <input type="radio" name="question{{ current_question.id }}" value="{{ current_question.option1 }}"> {{ current_question.option1 }}<br>
+                    <input type="radio" name="question{{ current_question.id }}" value="{{ current_question.option2 }}"> {{ current_question.option2 }}<br>
+                    <input type="radio" name="question{{ current_question.id }}" value="{{ current_question.option3 }}"> {{ current_question.option3 }}<br>
+                    <input type="radio" name="question{{ current_question.id }}" value="{{ current_question.option4 }}"> {{ current_question.option4 }}<br>
+              </div>
+
+            {% if current_question_index > 0 %}
+                <input type="submit" name="previous" value="Previous">
+            {% endif %}
+
+            {% if current_question_index < last_question_index %}
+                <input type="submit" name="next" value="Next">
+            {% else %}
+                <input type="submit" value="Finish">
+            {% endif %}
         </form>
     </div>
-    {% endfor %}
-<!--    <div>-->
-<!--        <p>{{ current_question.question_text }}</p>-->
-<!--        <form method="post">-->
-<!--            {% csrf_token %}-->
-<!--            <input type="radio" name="selected_option" value="{{ current_question.option1 }}"> {{ current_question.option1 }}<br>-->
-<!--            <input type="radio" name="selected_option" value="{{ current_question.option2 }}"> {{ current_question.option2 }}<br>-->
-<!--            <input type="radio" name="selected_option" value="{{ current_question.option3 }}"> {{ current_question.option3 }}<br>-->
-<!--            <input type="radio" name="selected_option" value="{{ current_question.option4 }}"> {{ current_question.option4 }}<br>-->
-<!--            <button type="submit">Next</button>-->
-<!--        </form>-->
-<!--    </div>-->
-
-<!--<div>-->
-<!--        <p>{{ current_question.question_text }}</p>-->
-<!--        <form method="post">-->
-<!--            {% csrf_token %}-->
-<!--            <input type="radio" name="selected_option" value="{{ current_question.option1 }}"> {{ current_question.option1 }}<br>-->
-<!--            <input type="radio" name="selected_option" value="{{ current_question.option2 }}"> {{ current_question.option2 }}<br>-->
-<!--            <input type="radio" name="selected_option" value="{{ current_question.option3 }}"> {{ current_question.option3 }}<br>-->
-<!--            <input type="radio" name="selected_option" value="{{ current_question.option4 }}"> {{ current_question.option4 }}<br>-->
-<!--                <button type="submit">Next</button>-->
-<!--        </form>-->
-<!--    </div>-->
-
 </body>
 </html>
